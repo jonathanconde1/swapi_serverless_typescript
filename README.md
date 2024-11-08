@@ -1,7 +1,7 @@
 # swapi_serverless_typescript
 
 ## Getting started
-git clone ...
+git clone https://github.com/jonathanconde1/swapi_serverless_typescript
 npm install
 
 no olvidarse crear el .env
@@ -12,6 +12,17 @@ npx serverless offline
 npx jest
 
 npx serverless deploy
+
+## Example .env
+
+DATABASE_URL=127.0.0.1
+
+DB_HOST=127.0.0.1
+DB_USER=serverless
+DB_PORT=5432
+DB_PASSWORD=123456
+DB_NAME=swapi
+
 
 ## Database Postgres
 
