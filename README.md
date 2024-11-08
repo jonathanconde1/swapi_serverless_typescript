@@ -1,0 +1,1 @@
+# swapi_serverless_typescript
