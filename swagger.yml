@@ -23,19 +23,20 @@ paths:
                   type: string
                   example: "Eli Jonathan"
                 altura:
-                  type: number
-                  format: float
-                  example: 1.75
+                  type: string
+                  example: "1.75"
                 masa:
-                  type: number
-                  format: float
-                  example: 73
+                  type: string
+                  example: "73"
                 color_ojos:
                   type: string
                   example: "Marron"
                 color_cabello:
                   type: string
                   example: "negro"
+                genero:
+                  type: string
+                  example: "male"
       responses:
         '200':
           description: "Personaje creado exitosamente."
@@ -44,11 +45,24 @@ paths:
               schema:
                 type: object
                 properties:
-                  message:
+                  nombre:
                     type: string
-                    example: "Personaje creado con éxito"
-        '400':
-          description: "Solicitud incorrecta"
+                    example: "Eli Jonathan"
+                  altura:
+                    type: string
+                    example: "1.75"
+                  masa:
+                    type: string
+                    example: "73"
+                  color_ojos:
+                    type: string
+                    example: "Marron"
+                  color_cabello:
+                    type: string
+                    example: "negro"
+                  genero:
+                    type: string
+                    example: "male"
         '500':
           description: "Error en el servidor"
 
@@ -79,6 +93,8 @@ paths:
                     color_ojos:
                       type: string
                     color_cabello:
+                      type: string
+                    genero:
                       type: string
         '500':
           description: "Error en el servidor"
@@ -115,7 +131,7 @@ paths:
                     type: string
                   color_cabello:
                     type: string
-        '404':
-          description: "Personaje no encontrado en SWAPI"
+                  genero:
+                    type: string
         '500':
           description: "Error en el servidor"

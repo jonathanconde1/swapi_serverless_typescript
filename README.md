@@ -1,16 +1,17 @@
 # swapi_serverless_typescript
 
-git clone ...
-npm install
-npx serverless offline
-
 ## Getting started
+git clone ...
 npm install
 
 no olvidarse crear el .env
 
+npx serverless offline
+
 ## Test and Deploy
 npx jest
+
+npx serverless deploy
 
 ## Database Postgres
 
@@ -39,19 +40,11 @@ curl -X POST http://localhost:3000/dev/personajes -H "Content-Type: application/
 
 curl -X POST http://localhost:3000/dev/personajes -H "Content-Type: application/json" -d '{"nombre": "Eli Jonathan", "altura": 1.75, "masa": 73, "color_ojos": "Marron", "color_cabello": "negro", "genero": "male"}'
 
-## Name
-
-## Description
-
-
 ## Documentacion de rutas
 
 https://editor.swagger.io/
 
 El archivo que contiene la documentación esta en la raiz (./swagger.yml)
-
-## Installation
-
 
 ## Project status
 En construcción
