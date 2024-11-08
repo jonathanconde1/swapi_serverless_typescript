@@ -45,35 +45,7 @@ curl -X POST http://localhost:3000/dev/personajes -H "Content-Type: application/
 
 https://editor.swagger.io/
 
-El archivo que contiene la documentación esta en la raiz (./swagger.yml)
-
-## Estructura del proyecto
-├── src/
-│   ├── application/
-│   │   ├── use-cases/
-│   │   │   ├── createPersonaje.ts
-│   │   │   └── getPersonajes.ts
-│   │   │   └── getPersonajesSWAPI.ts
-│   │   └── ports/
-│   │       ├── personajeRepository.ts
-│   │       └── swapiClient.ts
-│   ├── domain/
-│   │   └── models/
-│   │       └── personaje.ts
-│   ├── infrastructure/
-│   │   ├── database/
-│   │   │   └── personajeRepository.ts
-
-│   │   ├── external-apis/
-│   │   │   └── swapiClient.ts
-│   │   └── serverless/
-│   │       └── handler.ts
-│   │       
-│   └── shared/
-│       └── utils/
-│           └── uuid.ts
-└── package.json
-└── serverless.yml
+El archivo swagger.yml contiene la documentación del proyecto.
 
 ## Project status
 En construcción
