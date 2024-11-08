@@ -2,6 +2,7 @@
 
 ## Getting started
 git clone https://github.com/jonathanconde1/swapi_serverless_typescript
+
 npm install
 
 no olvidarse crear el .env
@@ -12,17 +13,6 @@ npx serverless offline
 npx jest
 
 npx serverless deploy
-
-## Example .env
-
-DATABASE_URL=127.0.0.1
-
-DB_HOST=127.0.0.1
-DB_USER=serverless
-DB_PORT=5432
-DB_PASSWORD=123456
-DB_NAME=swapi
-
 
 ## Database Postgres
 
@@ -56,6 +46,34 @@ curl -X POST http://localhost:3000/dev/personajes -H "Content-Type: application/
 https://editor.swagger.io/
 
 El archivo que contiene la documentación esta en la raiz (./swagger.yml)
+
+## Estructura del proyecto
+├── src/
+│   ├── application/
+│   │   ├── use-cases/
+│   │   │   ├── createPersonaje.ts
+│   │   │   └── getPersonajes.ts
+│   │   │   └── getPersonajesSWAPI.ts
+│   │   └── ports/
+│   │       ├── personajeRepository.ts
+│   │       └── swapiClient.ts
+│   ├── domain/
+│   │   └── models/
+│   │       └── personaje.ts
+│   ├── infrastructure/
+│   │   ├── database/
+│   │   │   └── personajeRepository.ts
+
+│   │   ├── external-apis/
+│   │   │   └── swapiClient.ts
+│   │   └── serverless/
+│   │       └── handler.ts
+│   │       
+│   └── shared/
+│       └── utils/
+│           └── uuid.ts
+└── package.json
+└── serverless.yml
 
 ## Project status
 En construcción
