@@ -1,0 +1,121 @@
+openapi: 3.0.0
+info:
+  title: API de Personajes
+  description: API para crear, obtener y almacenar personajes.
+  version: 1.0.0
+servers:
+  - url: https://dev.execute-api.us-east-1.amazonaws.com  # Asegúrate de usar la URL correcta
+
+paths:
+  /personajes:
+    post:
+      summary: "Crear un personaje"
+      description: "Este endpoint permite crear un nuevo personaje."
+      operationId: createPersonaje
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                nombre:
+                  type: string
+                  example: "Eli Jonathan"
+                altura:
+                  type: number
+                  format: float
+                  example: 1.75
+                masa:
+                  type: number
+                  format: float
+                  example: 73
+                color_ojos:
+                  type: string
+                  example: "Marron"
+                color_cabello:
+                  type: string
+                  example: "negro"
+      responses:
+        '200':
+          description: "Personaje creado exitosamente."
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: "Personaje creado con éxito"
+        '400':
+          description: "Solicitud incorrecta"
+        '500':
+          description: "Error en el servidor"
+
+    get:
+      summary: "Obtener todos los personajes"
+      description: "Este endpoint permite obtener todos los personajes almacenados."
+      operationId: getPersonajes
+      responses:
+        '200':
+          description: "Lista de personajes"
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: string
+                    nombre:
+                      type: string
+                    altura:
+                      type: number
+                      format: float
+                    masa:
+                      type: number
+                      format: float
+                    color_ojos:
+                      type: string
+                    color_cabello:
+                      type: string
+        '500':
+          description: "Error en el servidor"
+
+  /personajes/swapi/{id}:
+    get:
+      summary: "Obtener personaje desde SWAPI"
+      description: "Este endpoint obtiene un personaje desde SWAPI usando un ID."
+      operationId: getAndStorePersonajeFromSWAPI
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: "ID del personaje en SWAPI."
+          schema:
+            type: string
+      responses:
+        '200':
+          description: "Personaje obtenido con éxito"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  nombre:
+                    type: string
+                  altura:
+                    type: number
+                    format: float
+                  masa:
+                    type: number
+                    format: float
+                  color_ojos:
+                    type: string
+                  color_cabello:
+                    type: string
+        '404':
+          description: "Personaje no encontrado en SWAPI"
+        '500':
+          description: "Error en el servidor"
